@@ -27,8 +27,11 @@ public class ProdutoController {
     }
 
     @GetMapping
-    public Page<DadosListagemProdutos> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable pageable){
-        return (Page<DadosListagemProdutos>) repository.findAllByAtivoTrue(pageable).stream().map(DadosListagemProdutos::new);
+    public Page<DadosListagemProdutos> listar(
+            @PageableDefault(size = 10, sort = {"item"}) Pageable pageable) {
+
+        return repository.findAllByAtivoTrue(pageable)
+                .map(DadosListagemProdutos::new);
     }
 
     @PutMapping
