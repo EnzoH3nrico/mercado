@@ -44,7 +44,7 @@ public class ProdutoController {
     @DeleteMapping("/{id}")
     @Transactional
     public void excluir(@PathVariable Long id){
-        var medico = repository.getReferenceById(id);
-        medico.excluir();
+        var produto = repository.getReferenceById(id);
+        produto.excluir();
     }
 }
