@@ -1,4 +1,4 @@
-package com.supermarket.mercado.model;
+package com.supermarket.mercado.domain.model;
 
 public enum Categoria {
     LATICINIOS,

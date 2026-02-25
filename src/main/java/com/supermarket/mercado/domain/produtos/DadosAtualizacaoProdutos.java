@@ -1,6 +1,5 @@
-package com.supermarket.mercado.produtos;
+package com.supermarket.mercado.domain.produtos;
 
-import com.supermarket.mercado.model.Fornecedor;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizacaoProdutos(

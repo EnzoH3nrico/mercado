@@ -1,8 +1,8 @@
-package com.supermarket.mercado.model;
+package com.supermarket.mercado.domain.model;
 
 
-import com.supermarket.mercado.model.record.DadosProdutos;
-import com.supermarket.mercado.produtos.DadosAtualizacaoProdutos;
+import com.supermarket.mercado.domain.model.record.DadosProdutos;
+import com.supermarket.mercado.domain.produtos.DadosAtualizacaoProdutos;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;

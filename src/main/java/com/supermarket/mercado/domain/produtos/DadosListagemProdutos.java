@@ -1,9 +1,7 @@
-package com.supermarket.mercado.produtos;
+package com.supermarket.mercado.domain.produtos;
 
-import com.supermarket.mercado.model.Categoria;
-import com.supermarket.mercado.model.Fornecedor;
-import com.supermarket.mercado.model.Produtos;
-import com.supermarket.mercado.model.record.DadosProdutos;
+import com.supermarket.mercado.domain.model.Categoria;
+import com.supermarket.mercado.domain.model.Produtos;
 
 public record DadosListagemProdutos(Long id, String item, String marca, String descricao, Double preco, Categoria categoria) {
 

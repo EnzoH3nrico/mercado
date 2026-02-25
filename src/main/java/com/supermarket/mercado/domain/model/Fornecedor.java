@@ -1,8 +1,6 @@
-package com.supermarket.mercado.model;
+package com.supermarket.mercado.domain.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.GeneratedValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
