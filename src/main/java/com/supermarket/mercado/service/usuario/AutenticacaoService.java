@@ -1,5 +1,6 @@
 package com.supermarket.mercado.service.usuario;
 
+import com.supermarket.mercado.exceptions_handling.exception.MercadoException;
 import com.supermarket.mercado.repositories.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

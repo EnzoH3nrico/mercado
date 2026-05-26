@@ -1,4 +1,4 @@
-package com.supermarket.mercado.dto.consulta.dto;
+package com.supermarket.mercado.dto.consulta;
 
 import com.supermarket.mercado.model.consulta.Consulta;
 

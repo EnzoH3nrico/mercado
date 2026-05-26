@@ -1,7 +1,7 @@
 package com.supermarket.mercado.controller.consulta;
 
 import com.supermarket.mercado.dto.fornecedor.DadosFornecedorAutenticacao;
-import com.supermarket.mercado.service.consulta.Consulta;
+import com.supermarket.mercado.service.consulta.ConsultaService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConsultaController {
 
     @Autowired
-    private Consulta estoque;
+    private ConsultaService estoque;
 
     @PostMapping
     @Transactional

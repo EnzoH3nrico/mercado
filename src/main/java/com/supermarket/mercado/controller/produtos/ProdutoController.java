@@ -6,6 +6,7 @@ import com.supermarket.mercado.dto.produtos.DadosProdutos;
 import com.supermarket.mercado.dto.produtos.DadosAtualizacaoProdutos;
 import com.supermarket.mercado.dto.produtos.DadosListagemProdutos;
 import com.supermarket.mercado.repositories.produtos.ProdutoRepository;
+import com.supermarket.mercado.service.produtos.ProdutoService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -24,17 +25,16 @@ public class ProdutoController {
     @Autowired
     private ProdutoRepository repository;
 
+    @Autowired
+    private ProdutoService produtoService;
+
     @PostMapping
     @Transactional
     @SecurityRequirement(name = "bearer-key")
     public ResponseEntity cadatrarProduto(@RequestBody @Valid DadosProdutos dados, UriComponentsBuilder uriBuilder){
-        var produto = new Produtos(dados);
+        produtoService.registroProduto(dados, uriBuilder);
 
-        repository.save(produto);
-
-        var uri = uriBuilder.path("/mercado/{id}").buildAndExpand(produto.getId()).toUri();
-
-        return ResponseEntity.created(uri).body(new DadosDetalhamentoProduto(produto));
+        return ResponseEntity.ok("Produto cadastrado com sucesso!");
     }
 
     @GetMapping
@@ -70,5 +70,10 @@ public class ProdutoController {
         var produto = repository.getReferenceById(id);
 
         return ResponseEntity.ok(new DadosDetalhamentoProduto(produto));
+    }
+
+    @PostMapping("/venda")
+    public ResponseEntity<String> vender(@RequestBody DadosDetalhamentoProduto dados){
+        return produtoService.venda(dados);
     }
 }

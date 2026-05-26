@@ -25,6 +25,7 @@ public class AutenticacaoController {
     public ResponseEntity<DadosTokenJWT> efetuarLogin(@RequestBody @Valid DadosAutenticacao dados){
 
 
+
         var tokenAutenticador = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         var autenticacao = manager.authenticate(tokenAutenticador);
 

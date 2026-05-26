@@ -1,6 +1,6 @@
 package com.supermarket.mercado.service.consulta;
 
-import com.supermarket.mercado.dto.consulta.dto.DadosDetalhamentoConsulta;
+import com.supermarket.mercado.dto.consulta.DadosDetalhamentoConsulta;
 import com.supermarket.mercado.dto.fornecedor.DadosFornecedorAutenticacao;
 import com.supermarket.mercado.repositories.consulta.ConsultaRepository;
 import com.supermarket.mercado.repositories.fornecedor.FornecedorRepository;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Consulta {
+public class ConsultaService {
 
     @Autowired
     private ConsultaRepository consultaRepository;

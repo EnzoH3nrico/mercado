@@ -7,14 +7,12 @@ import com.supermarket.mercado.model.categoria.Categoria;
 import com.supermarket.mercado.model.fornecedor.Fornecedor;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
- @Entity(name = "Produtos")
+@Entity(name = "Produtos")
  @Table(name = "produto")
  @Getter
+ @Setter
  @NoArgsConstructor
  @AllArgsConstructor
  @EqualsAndHashCode(of = "id")
@@ -23,7 +21,10 @@ public class Produtos {
     private Long id;
     private String item;
     private String marca;
+
+    @Column(columnDefinition = "TEXT")
     private String descricao;
+
     private double preco;
     private int estoque;
 
