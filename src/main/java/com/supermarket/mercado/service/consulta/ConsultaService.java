@@ -25,7 +25,7 @@ public class ConsultaService {
         var produto = produtoRepository.findById(dados.idProduto())
                 .orElseThrow(() -> new MercadoException("Produto não encontrado"));
 
-        var fornecedor = fornecedorRepository.findById(dados.idProduto())
+        var fornecedor = fornecedorRepository.findById(dados.idFornecedor())
                 .orElseThrow(() -> new MercadoException("Fornecedor não encontrado"));
 
         var consulta = new com.supermarket.mercado.model.consulta.Consulta(null, fornecedor, produto, dados.data());
