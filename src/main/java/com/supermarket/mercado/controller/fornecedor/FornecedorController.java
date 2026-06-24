@@ -33,7 +33,7 @@ public class FornecedorController {
     }
 
     @GetMapping
-    public ResponseEntity mostrarFornecedor(DadosDetalhamentoFornecedor dados){
+    public ResponseEntity mostrarFornecedor(@RequestParam DadosDetalhamentoFornecedor dados){
         var acharFornecedor = repository.findById(dados.id());
 
         return ResponseEntity.ok(acharFornecedor);

@@ -1,5 +1,6 @@
 package com.supermarket.mercado.controller.produtos;
 
+import com.supermarket.mercado.exceptions_handling.exception.MercadoException;
 import com.supermarket.mercado.model.produtos.Produtos;
 import com.supermarket.mercado.dto.produtos.DadosDetalhamentoProduto;
 import com.supermarket.mercado.dto.produtos.DadosProdutos;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -31,10 +33,14 @@ public class ProdutoController {
     @PostMapping
     @Transactional
     @SecurityRequirement(name = "bearer-key")
-    public ResponseEntity cadatrarProduto(@RequestBody @Valid DadosProdutos dados, UriComponentsBuilder uriBuilder){
+    public ResponseEntity<String> cadastrarProduto(@RequestBody @Valid DadosProdutos dados,
+                                                   UriComponentsBuilder uriBuilder) {
+
         produtoService.registroProduto(dados, uriBuilder);
 
-        return ResponseEntity.ok("Produto cadastrado com sucesso!");
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body("Produto cadastrado com sucesso!");
     }
 
     @GetMapping
